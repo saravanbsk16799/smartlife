@@ -1,0 +1,3 @@
+-keep class androidx.health.connect.client.** { *; }
+-keep class * extends androidx.room.RoomDatabase
+-dontwarn javax.annotation.**

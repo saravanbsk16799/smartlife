@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SMART LIFE – STARK EDITION</string>
+
+    <string name="tab_home">Home</string>
+    <string name="tab_health">Health</string>
+    <string name="tab_activity">Activity</string>
+    <string name="tab_device">Device</string>
+    <string name="tab_profile">Profile</string>
+
+    <string name="jarvis_title">J.A.R.V.I.S. Wellness</string>
+    <string name="jarvis_no_data">Awaiting data, sir. Connect your watch or Health Connect to begin.</string>
+    <string name="readiness">Readiness</string>
+
+    <string name="steps">Steps</string>
+    <string name="calories">Calories</string>
+    <string name="distance">Distance</string>
+    <string name="heart_rate">Heart rate</string>
+    <string name="spo2">SpO₂</string>
+    <string name="sleep">Sleep</string>
+    <string name="stress">Stress</string>
+    <string name="battery">Battery</string>
+    <string name="no_data">No data yet</string>
+    <string name="last_7_days">Last 7 days</string>
+    <string name="report_title">Health report</string>
+
+    <string name="workouts_title">Workouts</string>
+    <string name="start_workout">Start</string>
+    <string name="stop_workout">Stop</string>
+    <string name="workout_phone_only">Tracked on the phone clock. Distance and heart rate come only from data the watch actually provides.</string>
+    <string name="alarms_title">Alarms &amp; reminders</string>
+    <string name="add_alarm">Add</string>
+    <string name="alarm_label_hint">Label</string>
+    <string name="alarms_phone_only">These run on this phone. Sending them to the watch is disabled until the watch command is verified.</string>
+
+    <string name="device_title">Device</string>
+    <string name="scan">Scan for watches</string>
+    <string name="scanning">Scanning…</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="sync_now">Sync now</string>
+    <string name="status_connected">Connected</string>
+    <string name="status_disconnected">Disconnected</string>
+    <string name="status_connecting">Connecting…</string>
+    <string name="bt_permission_needed">Bluetooth permission is required to find your watch.</string>
+    <string name="grant_permission">Grant permission</string>
+    <string name="gatt_inspector">GATT inspector</string>
+    <string name="protocol_unverified_title">Watch protocol not verified</string>
+    <string name="protocol_unverified_body">The Jupiter R2 vendor protocol is not publicly documented, so this app does not send any proprietary commands. Standard Bluetooth services (Heart Rate 0x180D, Battery 0x180F) are used only if the watch exposes them. Use the GATT inspector to see what your watch exposes.</string>
+
+    <string name="watchfaces_title">Watch faces</string>
+    <string name="watchfaces_body">Installing watch faces needs the vendor transfer protocol, which is not verified for the Jupiter R2. Watch faces can only be changed on the watch itself or in the official Fastrack app.</string>
+    <string name="calling_title">Bluetooth calling</string>
+    <string name="calling_body">Bluetooth calling on the Jupiter R2 uses the classic Bluetooth audio link, which you pair in Android Bluetooth settings. This app cannot enable it.</string>
+    <string name="open_bt_settings">Open Bluetooth settings</string>
+
+    <string name="aod_title">Always-On Display</string>
+    <string name="aod_unsupported_body">The Jupiter R2 has a 1.38\" TFT (LCD) screen. Published specifications list no Always-On Display for it, and no AOD command is documented, so the controls are disabled. Nothing is simulated.</string>
+
+    <string name="notif_title">Notifications</string>
+    <string name="notif_body">Allow notification access so calls and app alerts can be read on this phone. They are stored locally and are not forwarded to the watch until the watch command is verified.</string>
+    <string name="notif_grant">Open notification access</string>
+    <string name="notif_recent">Recent alerts</string>
+    <string name="notif_clear">Clear</string>
+
+    <string name="hc_title">Health Connect</string>
+    <string name="hc_unavailable">Health Connect is not available on this phone.</string>
+    <string name="hc_update_required">Health Connect needs an update.</string>
+    <string name="hc_grant">Grant access</string>
+    <string name="hc_import">Import last 7 days</string>
+    <string name="hc_connected">Access granted</string>
+
+    <string name="theme_title">Theme</string>
+    <string name="theme_system">Follow system</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_stark">Stark</string>
+    <string name="language_title">Language</string>
+    <string name="language_system">System default</string>
+    <string name="language_english">English</string>
+    <string name="language_tamil">தமிழ் (Tamil)</string>
+    <string name="language_hindi">हिन्दी (Hindi)</string>
+
+    <string name="profile_title">Profile</string>
+    <string name="name_label">Name</string>
+    <string name="age_label">Age</string>
+    <string name="height_label">Height (cm)</string>
+    <string name="weight_label">Weight (kg)</string>
+    <string name="step_goal_label">Daily step goal</string>
+    <string name="save">Save</string>
+    <string name="privacy_title">Privacy</string>
+    <string name="privacy_body">All data stays on this phone. The app has no ads, no shop and no analytics. Health Connect access can be revoked at any time in system settings.</string>
+    <string name="delete_data">Delete all local data</string>
+    <string name="delete_confirm">This permanently deletes readings, workouts, alarms and alerts stored by this app.</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+
+    <string name="stress_unavailable">Stress and sleep stages come from vendor data that is not verified for this watch, so they are not shown.</string>
+    <string name="sport_walk">Walk</string>
+    <string name="sport_run">Run</string>
+    <string name="sport_cycle">Cycle</string>
+    <string name="sport_yoga">Yoga</string>
+    <string name="sport_gym">Gym</string>
+    <string name="unit_steps">steps</string>
+    <string name="unit_kcal">kcal</string>
+    <string name="unit_km">km</string>
+    <string name="unit_bpm">bpm</string>
+    <string name="unit_hours">h</string>
+    <string name="msg_bluetooth_off">Bluetooth is off or unavailable.</string>
+    <string name="msg_scan_failed">Scan failed.</string>
+    <string name="msg_gatt_error">Connection error.</string>
+    <string name="hc_source_note">Data appears only if another app (such as the official Fastrack app) has written it to Health Connect.</string>
+    <string name="no_hr_service">This watch does not expose the standard Heart Rate service, so live heart rate is unavailable over this link.</string>
+    <string name="live_hr">Live heart rate</string>
+    <string name="today">Today</string>
+    <string name="open_hc_settings">Health Connect settings</string>
+    <string name="alert_call">Call</string>
+</resources>
