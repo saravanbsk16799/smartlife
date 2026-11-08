@@ -13,7 +13,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
 
@@ -33,18 +33,30 @@ jobs:
           echo -e "\n24333f8a63b6825ea9c5514f83c2829b004d1fee\n8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e" | sudo tee "$ANDROID_HOME/licenses/android-sdk-license" > /dev/null
           echo "sdk.dir=$ANDROID_HOME" > local.properties
 
-      - name: Build debug APK
+      - name: Build debug APK (with retries)
         run: |
-          set -o pipefail
-          gradle :app:assembleDebug --no-daemon --console=plain 2>&1 | tee build.log
+          for i in 1 2 3 4; do
+            echo "=== Attempt $i ==="
+            if gradle :app:assembleDebug --no-daemon --console=plain 2>&1 | tee build.log; then
+              if [ "${PIPESTATUS[0]}" -eq 0 ]; then exit 0; fi
+            fi
+            if grep -q "Received status code 50[0-9]\|Gateway\|timed out" build.log; then
+              echo "Download problem, waiting 60s then retrying..."
+              sleep 60
+            else
+              echo "Not a download problem, stopping."
+              exit 1
+            fi
+          done
+          exit 1
 
       - name: Show the error summary
         if: failure()
         run: |
           echo "=========== WHAT WENT WRONG ==========="
-          grep -n -A 25 "What went wrong" build.log | head -80
-          echo "=========== COULD NOT LINES ==========="
-          grep -n "Could not\|error:\|e: " build.log | head -30
+          grep -n -A 25 "What went wrong" build.log | tail -80
+          echo "=========== ERROR LINES ==========="
+          grep -n "^e: \|error:" build.log | head -40
 
       - uses: actions/upload-artifact@v4
         with:
